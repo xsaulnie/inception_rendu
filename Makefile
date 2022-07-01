@@ -13,7 +13,9 @@ on:
 	sudo docker-compose -f srcs/docker-compose.yml up -d --build
 off:
 	sudo docker-compose -f srcs/docker-compose.yml stop
-	sudo docker system prune 
+	sudo docker system prune
+stop:
+	sudo docker-compose -f srcs/docker-compose.yml stop
 rmv:
 	-sudo docker volume rm inception_database
 	-sudo docker volume rm inception_website
@@ -33,8 +35,8 @@ rmiv:
 	-sudo rm -Rf /home/xsaulnie/data/website
 	-sudo rm -Rf /home/xsaulnie/data/database
 rmeval:
-	docker stop $(DOCKER_PS)
-	docker rm $(DOCKER_PS)
+	-docker stop $(DOCKER_PS)
+	-docker rm $(DOCKER_PS)
 	docker rmi -f $(DOCKER_IM)
 	docker volume rm $(DOCKER_VM)
 	docker network rm $(DOCKER_NT) 2>/dev/null
