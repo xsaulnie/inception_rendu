@@ -34,6 +34,7 @@ rmiv:
 	-sudo docker volume rm srcs_website
 	-sudo rm -Rf /home/xsaulnie/data/website
 	-sudo rm -Rf /home/xsaulnie/data/database
+	-sudo rm -Rf /home/xsaulnie/data
 rmeval:
 	-docker stop $(DOCKER_PS)
 	-docker rm $(DOCKER_PS)
@@ -41,5 +42,6 @@ rmeval:
 	docker volume rm $(DOCKER_VM)
 	docker network rm $(DOCKER_NT) 2>/dev/null
 	-sudo rm -Rf /home/xsaulnie/data/website
-	-sudo rm -Rf /home/xsaulnie/sata/database
+	-sudo rm -Rf /home/xsaulnie/data/database
+	-sudo rm -Rf /home/xsaulnie/data
 
